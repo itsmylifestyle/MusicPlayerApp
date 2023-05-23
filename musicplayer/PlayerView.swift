@@ -1,11 +1,3 @@
-//
-//  PlayerView.swift
-//  Anima
-//
-//  Created by Айбек on 09.04.2023.
-//
-
-import Foundation
 import SwiftUI
 import Firebase
 import AVFoundation
@@ -15,9 +7,9 @@ struct PlayerView: View {
     @State var album : Album
     @State var song : Song
     
-    @State var player = AVPlayer()
+    @State private var player = AVPlayer()
     
-    @State var isPlaying: Bool = false
+    @State var isPlaying: Bool = true
     
     @State private var playerDidFinishPlayingCancellable: AnyCancellable?
     
@@ -27,7 +19,7 @@ struct PlayerView: View {
             Blur(style: .dark).edgesIgnoringSafeArea(.all)
             VStack {
                 Spacer()
-                AlbumArt(album: album, isWithText: false)
+                AlbumArt(album: album, isWithText: false, isSelected: false).frame(width: 300, height: 300).scaleEffect(1.5)
                 Text(song.name).font(.title).fontWeight(.heavy).foregroundColor(.white)
                 Spacer()
                 ZStack {
@@ -57,6 +49,10 @@ struct PlayerView: View {
         }.onAppear() {
             self.playSong()
         }
+        .onDisappear {
+            self.stopPlayer()
+        }
+
     }
     
     func playSong() {
@@ -71,6 +67,8 @@ struct PlayerView: View {
                 } catch {
                     
                 }
+                
+                
                 
                 player = AVPlayer(playerItem: AVPlayerItem(url: url!))
                 player.play()
@@ -96,7 +94,9 @@ struct PlayerView: View {
     func next() {
         if let currentIndex = album.songs.firstIndex(of: song) {
             if currentIndex == album.songs.count - 1 {
-                
+                player.pause()
+                song = album.songs.first! // Play the first song in the album
+                self.playSong()
             } else {
                 player.pause()
                 song = album.songs[currentIndex + 1]
@@ -105,6 +105,11 @@ struct PlayerView: View {
         }
     }
     
+    func stopPlayer() {
+            player.pause()
+            player.replaceCurrentItem(with: nil)
+            playerDidFinishPlayingCancellable?.cancel()
+    }
     
     
     func previous() {

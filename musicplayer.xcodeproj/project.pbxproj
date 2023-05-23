@@ -7,18 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0146DF200BE5FCBF96774701 /* Pods_musicplayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15053D2377651FA24BB3937A /* Pods_musicplayer.framework */; };
 		A71F82BA29E2FD9900F695AE /* musicplayerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71F82B929E2FD9900F695AE /* musicplayerApp.swift */; };
 		A71F82BC29E2FD9900F695AE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71F82BB29E2FD9900F695AE /* ContentView.swift */; };
 		A71F82BE29E2FD9A00F695AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A71F82BD29E2FD9A00F695AE /* Assets.xcassets */; };
 		A71F82C129E2FD9A00F695AE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A71F82C029E2FD9A00F695AE /* Preview Assets.xcassets */; };
+		A71F82C829E2FDAC00F695AE /* BlurEffecr.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71F82C729E2FDAC00F695AE /* BlurEffecr.swift */; };
+		A71F82CA29E2FDCB00F695AE /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71F82C929E2FDCB00F695AE /* PlayerView.swift */; };
+		A71F82CC29E2FEC300F695AE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A71F82CB29E2FEC300F695AE /* GoogleService-Info.plist */; };
+		A7254A8D29E30EF2005B88C9 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7254A8C29E30EF2005B88C9 /* Data.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0835674F846CF06E5C39CFC9 /* Pods-musicplayer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-musicplayer.debug.xcconfig"; path = "Target Support Files/Pods-musicplayer/Pods-musicplayer.debug.xcconfig"; sourceTree = "<group>"; };
+		15053D2377651FA24BB3937A /* Pods_musicplayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_musicplayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A71F82B629E2FD9900F695AE /* musicplayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = musicplayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A71F82B929E2FD9900F695AE /* musicplayerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = musicplayerApp.swift; sourceTree = "<group>"; };
 		A71F82BB29E2FD9900F695AE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		A71F82BD29E2FD9A00F695AE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A71F82C029E2FD9A00F695AE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		A71F82C729E2FDAC00F695AE /* BlurEffecr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurEffecr.swift; sourceTree = "<group>"; };
+		A71F82C929E2FDCB00F695AE /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
+		A71F82CB29E2FEC300F695AE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		A7254A8C29E30EF2005B88C9 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		A7254A8E29E33A5B005B88C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		F420A1A89EC1C5D850224641 /* Pods-musicplayer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-musicplayer.release.xcconfig"; path = "Target Support Files/Pods-musicplayer/Pods-musicplayer.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,17 +39,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0146DF200BE5FCBF96774701 /* Pods_musicplayer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		33762802D2DC74A67D26768B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0835674F846CF06E5C39CFC9 /* Pods-musicplayer.debug.xcconfig */,
+				F420A1A89EC1C5D850224641 /* Pods-musicplayer.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		A71F82AD29E2FD9900F695AE = {
 			isa = PBXGroup;
 			children = (
 				A71F82B829E2FD9900F695AE /* musicplayer */,
 				A71F82B729E2FD9900F695AE /* Products */,
+				33762802D2DC74A67D26768B /* Pods */,
+				F8C9661B84D3FD577E2113BF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -51,8 +76,13 @@
 		A71F82B829E2FD9900F695AE /* musicplayer */ = {
 			isa = PBXGroup;
 			children = (
+				A7254A8E29E33A5B005B88C9 /* Info.plist */,
 				A71F82B929E2FD9900F695AE /* musicplayerApp.swift */,
+				A7254A8C29E30EF2005B88C9 /* Data.swift */,
+				A71F82CB29E2FEC300F695AE /* GoogleService-Info.plist */,
 				A71F82BB29E2FD9900F695AE /* ContentView.swift */,
+				A71F82C729E2FDAC00F695AE /* BlurEffecr.swift */,
+				A71F82C929E2FDCB00F695AE /* PlayerView.swift */,
 				A71F82BD29E2FD9A00F695AE /* Assets.xcassets */,
 				A71F82BF29E2FD9A00F695AE /* Preview Content */,
 			);
@@ -67,6 +97,14 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		F8C9661B84D3FD577E2113BF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				15053D2377651FA24BB3937A /* Pods_musicplayer.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,9 +112,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A71F82C429E2FD9A00F695AE /* Build configuration list for PBXNativeTarget "musicplayer" */;
 			buildPhases = (
+				88EAB189622FB803631BCDCA /* [CP] Check Pods Manifest.lock */,
 				A71F82B229E2FD9900F695AE /* Sources */,
 				A71F82B329E2FD9900F695AE /* Frameworks */,
 				A71F82B429E2FD9900F695AE /* Resources */,
+				B3044C2CCA6913CB07C0944D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -127,18 +167,64 @@
 			files = (
 				A71F82C129E2FD9A00F695AE /* Preview Assets.xcassets in Resources */,
 				A71F82BE29E2FD9A00F695AE /* Assets.xcassets in Resources */,
+				A71F82CC29E2FEC300F695AE /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		88EAB189622FB803631BCDCA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-musicplayer-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B3044C2CCA6913CB07C0944D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-musicplayer/Pods-musicplayer-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-musicplayer/Pods-musicplayer-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-musicplayer/Pods-musicplayer-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A71F82B229E2FD9900F695AE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A71F82C829E2FDAC00F695AE /* BlurEffecr.swift in Sources */,
+				A7254A8D29E30EF2005B88C9 /* Data.swift in Sources */,
 				A71F82BC29E2FD9900F695AE /* ContentView.swift in Sources */,
 				A71F82BA29E2FD9900F695AE /* musicplayerApp.swift in Sources */,
+				A71F82CA29E2FDCB00F695AE /* PlayerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,6 +349,7 @@
 		};
 		A71F82C529E2FD9A00F695AE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0835674F846CF06E5C39CFC9 /* Pods-musicplayer.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -272,6 +359,8 @@
 				DEVELOPMENT_TEAM = 9UGZTB7VYP;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = musicplayer/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Igizbayev;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -292,6 +381,7 @@
 		};
 		A71F82C629E2FD9A00F695AE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F420A1A89EC1C5D850224641 /* Pods-musicplayer.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -301,6 +391,8 @@
 				DEVELOPMENT_TEAM = 9UGZTB7VYP;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = musicplayer/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Igizbayev;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
