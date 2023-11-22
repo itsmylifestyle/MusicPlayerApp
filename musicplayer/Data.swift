@@ -9,6 +9,7 @@ import Foundation
 import SwiftUI
 import Firebase
 
+
 class MyData : ObservableObject {
     @Published public var albums = [Album]()
     

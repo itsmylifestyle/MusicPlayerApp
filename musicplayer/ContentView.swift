@@ -7,6 +7,7 @@
 
 import SwiftUI
 import Firebase
+import AVFoundation
 
 struct Album : Hashable {
     var id = UUID()
@@ -23,41 +24,94 @@ struct Song : Hashable {
 }
 
 struct ContentView: View {
-    
     @ObservedObject var data: MyData
     @State private var currentAlbum: Album?
-        
-        var body: some View {
-            NavigationView {
-                ScrollView {
-                    ScrollView(.horizontal, showsIndicators: false) {
-                        LazyHStack {
-                            ForEach(data.albums, id: \.self) { album in
-                                AlbumArt(album: album, isWithText: true, isSelected: album == currentAlbum)
-                                    .onTapGesture {
-                                        withAnimation(.spring()) {
-                                            self.currentAlbum = album
-                                        }
+    
+    private let audioPlayer = BackgroundAudioPlayer()
+    
+    var body: some View {
+        NavigationView {
+            ScrollView {
+                ScrollView(.horizontal, showsIndicators: false) {
+                    LazyHStack {
+                        ForEach(data.albums, id: \.self) { album in
+                            AlbumArt(album: album, isWithText: true, isSelected: album == currentAlbum)
+                                .onTapGesture {
+                                    withAnimation(.spring()) {
+                                        self.currentAlbum = album
                                     }
-                            }
-                        }
-                    }
-                    
-                    LazyVStack {
-                        if let album = currentAlbum ?? data.albums.first {
-                            ForEach(album.songs, id: \.self) { song in
-                                SongCell(album: album, song: song)
-                            }
-                        } else {
-                            EmptyView()
+                                }
                         }
                     }
                 }
-                .navigationTitle("Igizbayev's music")
-                .font(.subheadline)
+                
+                LazyVStack {
+                    if let album = currentAlbum ?? data.albums.first {
+                        ForEach(album.songs, id: \.self) { song in
+                            SongCell(album: album, song: song)
+                        }
+                    } else {
+                        EmptyView()
+                    }
+                }
             }
+            .navigationTitle("Igizbayev's music")
+            .font(.subheadline)
+        }
+        .onAppear {
+            audioPlayer.startBackgroundPlayback()
+        }
+        .onDisappear {
+            audioPlayer.stopBackgroundPlayback()
         }
     }
+}
+
+class BackgroundAudioPlayer {
+    private var player: AVPlayer?
+    private var playerItem: AVPlayerItem?
+    private var playbackTimeObserver: Any?
+    
+    func startBackgroundPlayback() {
+        let audioSession = AVAudioSession.sharedInstance()
+        do {
+            try audioSession.setCategory(.playback, mode: .default, options: [])
+            try audioSession.setActive(true)
+        } catch {
+            print("Failed to set audio session category.")
+        }
+        
+        // Create a player item or use your existing implementation
+        // Example:
+        // let url = URL(string: "your_audio_file_url")
+        // playerItem = AVPlayerItem(url: url)
+        
+        player = AVPlayer(playerItem: playerItem)
+        player?.play()
+        
+        // Add observer for playback time updates
+        playbackTimeObserver = player?.addPeriodicTimeObserver(forInterval: CMTime(seconds: 1, preferredTimescale: 1), queue: nil) { [weak self] time in
+            // Update your UI or perform other tasks based on playback time
+        }
+    }
+    
+    func stopBackgroundPlayback() {
+        player?.pause()
+        player?.replaceCurrentItem(with: nil)
+        player = nil
+        
+        if let observer = playbackTimeObserver {
+            player?.removeTimeObserver(observer)
+            playbackTimeObserver = nil
+        }
+        
+        do {
+            try AVAudioSession.sharedInstance().setActive(false)
+        } catch {
+            print("Failed to deactivate audio session.")
+        }
+    }
+}
 
 struct AlbumArt: View {
     var album: Album
@@ -111,3 +165,5 @@ struct SongCell : View {
             }).buttonStyle(PlainButtonStyle())
     }
 }
+
+//some backend working

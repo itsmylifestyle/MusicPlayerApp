@@ -7,6 +7,7 @@
 
 import SwiftUI
 import FirebaseCore
+import AVFAudio
 
 @main
 struct YourApp: App {
@@ -15,6 +16,13 @@ struct YourApp: App {
     init() {
         FirebaseApp.configure()
         data.loadAlbums()
+        
+        do {
+            try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default, options: [])
+            try AVAudioSession.sharedInstance().setActive(true)
+        } catch {
+            print(error)
+        }
     }
     
     

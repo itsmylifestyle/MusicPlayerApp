@@ -61,7 +61,6 @@ struct PlayerView: View {
             if error != nil {
                 print(error)
             } else {
-                
                 do {
                     try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playback)//for a ringer
                 } catch {
